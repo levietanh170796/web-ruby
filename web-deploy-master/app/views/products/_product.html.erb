@@ -1,0 +1,34 @@
+<div class='item'>
+  <div class='item-over-lay' data-ProductID='<%= product.id %>' data-image='<%= url = asset_path "products/" + rand(1..40).to_s + ".jpg" %>'>
+    <input type="hidden">
+    <div class='product_image' style="background-image: url(<%= url %>)"></div>
+
+    <div class="down"></div>
+    <div class='info_container'>
+      <p class='product_name' data-ProductID='<%= product.id %>'><%= product.name %></p>
+      <p class='product_manufacturer'>Hãng: <%= product.manufacturer %></p>
+      <p class='product_description'>Chi tiết: <%= product.description %></p>
+      <p class='product_price'><%= product.price %></p>
+    </div>
+
+    <div class="btn-options">
+      <p><%= product.price %></p>
+
+      <i data-ProductID='<%= product.id %>'
+         data-ProductName='<%= product.name %>'
+         data-ProductPrice='<%= product.price %>'
+         data-ProductImage='<%= url %>'
+         data-Quantity='1'
+         class='fa fa-cart-plus add_to_card'></i>
+
+      <a href="/cart">
+        <i data-ProductID='<%= product.id %>'
+           data-ProductName=<%= product.name %>
+               data-ProductPrice=<%= product.price %>
+           data-ProductImage='<%= url %>'
+           data-Quantity='1'
+           class='fa fa-opencart quick_buy_button'></i>
+      </a>
+    </div>
+  </div>
+</div>

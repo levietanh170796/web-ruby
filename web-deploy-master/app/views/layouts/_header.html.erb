@@ -1,0 +1,80 @@
+<header class="header">
+    <div class="over-lay">
+        <div>
+            <!--logo-->
+            <div class="big-logo">
+                <a href="/">
+                    <%= cl_image_tag("logo.png", alt: "Logo") %>
+                    <div id="logo-text"><h1 id="name">5 Birds</h1>
+                        <span>Shop</span>
+                        <sup>tm</sup></div>
+
+                </a>
+            </div>
+            <!--menu-->
+            <div id="menu">
+                <div class="menu-container">
+                  <div class="menu">
+                      <ul>
+                          <li><a href="/home">Home</a></li>
+                          <li><%= link_to "Products", products_path %></li>
+                          <% if logged_in? %>
+                            <% if current_user.is_admin? %>
+                              <li><%= link_to "Manager", rails_admin_path %></li>
+                            <% end %>
+                            <li><%= link_to "Profile", current_user %></li>
+                            <li>
+                              <%= link_to "Log out", logout_path, method: :delete %>
+                            </li>
+                          <% else %>
+                            <li id="login"> <a>Log in </a></li>
+                          <% end %>
+                      </ul>
+                  </div>
+                </div>
+            </div>
+
+            <!--Search-box-->
+            <div class="search-box">
+                <i class="fa fa-search"
+                   aria-hidden="true" id="btn-search"></i>
+                <form method="get" action="/search">
+                  <div class="input-group" id="adv-search">
+                        <input type="text" id="search_text" name="key" placeholder="Search for products"/>
+                        <div class="input-group-btn">
+                            <div class="btn-group" role="group">
+                                <button type="submit" class="btn btn-primary" id="btn-not-show"></button>
+                            </div>
+                        </div>
+                        <img style="display: none" id="1" src = <%= asset_path "products/" + rand(1..40).to_s + ".jpg" %> />
+                        <img style="display: none" id="2" src = <%= asset_path "products/" + rand(1..40).to_s + ".jpg" %> />
+                        <img style="display: none" id="3" src = <%= asset_path "products/" + rand(1..40).to_s + ".jpg" %> />
+                        <img style="display: none" id="4" src = <%= asset_path "products/" + rand(1..40).to_s + ".jpg" %> />
+                        <img style="display: none" id="5" src = <%= asset_path "products/" + rand(1..40).to_s + ".jpg" %> />
+                        <img style="display: none" id="6" src = <%= asset_path "products/" + rand(1..40).to_s + ".jpg" %> />
+                        <img style="display: none" id="7" src = <%= asset_path "products/" + rand(1..40).to_s + ".jpg" %> />
+                        <img style="display: none" id="8" src = <%= asset_path "products/" + rand(1..40).to_s + ".jpg" %> />
+                        <img style="display: none" id="9" src = <%= asset_path "products/" + rand(1..40).to_s + ".jpg" %> />
+                        <img style="display: none" id="10" src = <%= asset_path "products/" + rand(1..40).to_s + ".jpg" %> />
+                        
+                  </div>
+                </form>
+            </div>
+
+            <script>
+                
+            </script>
+
+            <!--order-check-->
+            <div class="order-box">
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+
+            <div class="cart">
+                <p class="nothing">Nothing has been chosen</p>
+            </div>
+        </div>
+    </div>
+</header>
+<script>
+</script>

@@ -1,0 +1,38 @@
+.user-container {
+	width: 400px;
+}
+
+.user-form-name {
+	width: 49.5%;
+	display: inline-block;
+
+}
+
+.form-group button {
+	width: 100%;
+}
+
+.facebook, .google {
+	background-color: #3B5998;
+	color: white;
+	padding: 10px;
+	width: 50%;
+	float: left;
+}
+
+.google {
+	background-color: #dd4b39;
+}
+
+.facebook:hover, .google:hover {
+	opacity: 0.8;
+}
+
+.fa{
+	color: white;
+	margin: 5px 10px;
+}
+
+.connect-with{
+	color: white;
+}

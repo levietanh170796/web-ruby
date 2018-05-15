@@ -1,0 +1,73 @@
+<% provide :title, "Home" %>
+<div class="introduce">
+    <div class="over-lay">
+        <h3>Awesome</h3>
+        <h2 id="shadow-awesome">Awesome</h2>
+        <div class="wrap"><h1>We are Birds. We can fly.</h1></div>
+    </div>
+</div>
+<div class="slideshow">
+    <div class="owl-carousel">
+        <%= cl_image_tag("slide_1.jpg", alt: "Slide") %>
+        <%= cl_image_tag("slide_2.jpg", alt: "Slide") %>
+        <%= cl_image_tag("slide_3.jpg", alt: "Slide") %>
+        <%= cl_image_tag("slide_4.jpg", alt: "Slide") %>
+        <%= cl_image_tag("slide_5.jpg", alt: "Slide") %>
+    </div>
+</div>
+
+<div id="gradient"></div>
+<div id="fullpage">
+    <div class="section fake"></div>
+    <div class="section best-sell">
+        <div class="over-lay">
+            <div class="container">
+                <div class="catalog">
+                    <h1>BEST</h1>
+                    <h2>SELLING</h2>
+                </div>
+                <%= render @best_products %>
+            </div>
+        </div>
+    </div>
+    <!--new-->
+    <div class="section new">
+        <div class="over-lay">
+            <div class="container">
+                <div class="catalog">
+                    <h1>MOST</h1>
+                    <h2>NEW</h2>
+                </div>
+                <%= render @new_products %>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section hot">
+        <div class="over-lay">
+            <div class="container">
+                <div class="catalog">
+                    <h1>HOT</h1>
+                    <h2>SAIKIN</h2>
+                </div>
+                <%= render @best_products %>
+            </div>
+        </div>
+    </div>
+
+    <div class="section about">
+      <%= render "layouts/footer" %>
+    </div>
+</div>
+
+<div class="modal fade" id="item_modal" tabindex="-1" role="dialog" aria-labelledby="item_modal_label">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body" id="item_modal_body">
+
+            </div>
+        </div>
+    </div>
+</div>
+

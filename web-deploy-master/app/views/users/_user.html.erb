@@ -1,0 +1,20 @@
+<tr>
+  <th scope="row"><%= link_to user.id, user %></th>
+  <td><%= gravatar_for user, size: 80 %></td>
+  <td><%= link_to user.first_name, user %></td>
+  <td>
+    <% if user.user_details.any? %>
+      Details:
+      <ul>
+        <% user.user_details.each do |detail| %>
+          <li>
+            Country: <%= detail.country %>,
+            City: <%= detail.city %>,
+            Address: <%= detail.address %>,
+            Phone: <%= detail.phone %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </td>
+</tr>

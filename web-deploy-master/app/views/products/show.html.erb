@@ -1,0 +1,80 @@
+<div class="prod_modal">
+  <div class="big-logo">
+    <a href="/">
+      <h3>
+        <%= cl_image_tag("logo.png", alt: "Logo") %>
+        <span id="name">5 Birds</span>
+        <span>Shop</span>
+        <sup>tm</sup>
+      </h3>
+    </a>
+  </div>
+  <!--order-check-->
+  <div class="order-box inModal">
+    <i class="fa fa-shopping-cart"></i>
+  </div>
+  <div style="clear: both"></div>
+  <div class="cart inModal">
+    <p id="nothing">Nothing has been chosen</p>
+  </div>
+  <div class="col details">
+    <h1><%= @product.name %></h1>
+    <table>
+      <tr class="prod_brand">
+        <th>Sản xuất bởi</th>
+        <td><%= @product.manufacturer %></td>
+      </tr>
+      <tr class="prod_inventory">
+        <th>Trong kho còn</th>
+        <td><%= @product.quantity %> sản phẩm</td>
+      </tr>
+    </table>
+    <h3>Giới thiệu sản phẩm</h3>
+    <div class="descript"><p><%= @product.description %></p></div>
+
+  </div>
+  <div class="col image">
+    <div class="img" style="background-image: url(<%= asset_path "products/" + rand(1..40).to_s + ".jpg" %>)"></div>
+    <div class='buy'>
+      <table>
+      <tr class="prod_quantity">
+        <th>Số lượng</th>
+        <td><input class="input_qty"
+                   name="qty"
+                   autofocus="autofocus"
+                   autocomplete="off"
+                   min="1"
+                   max="9999"
+                   value="1"
+                   type="number"></input>
+        </td>
+      </tr>
+      <tr class="prod_price">
+        <th>Giá</th>
+        <td><%= @product.price %>$</td>
+      </tr>
+      </table>
+      <a
+      data-ProductID=<%= @product.id %>
+          data-ProductName=<%= @product.name %>
+      data-ProductPrice=<%= @product.price %>
+          data-Quantity='1'
+      class='quick_buy_button_details' href="/cart">
+        MUA NGAY
+      </a>
+      <a
+      data-ProductID=<%= @product.id %>
+          data-ProductName=<%= @product.name %>
+      data-ProductPrice=<%= @product.price %>
+          data-Quantity='1'
+      class='add_to_card_details'>
+        THÊM VÀO GIỎ
+      </a>
+    </div>
+  </div>
+  <div class="col facebook">
+    <%= render "layouts/facebook_comment" %>
+    <div as="FB" class="fb-comments" data-href= <%= request.original_url %> data-numposts="5"></div>
+  </div>
+</div>
+

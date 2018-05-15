@@ -1,0 +1,29 @@
+<%= bootstrap_nested_form_for @user do |f| %>
+  <%= render "shared/error_messages", object: @user %>
+
+  <%= f.text_field :first_name, class: "form-control" %>
+
+  <%= f.text_field :last_name, class: "form-control" %>
+
+  <%= f.email_field :email, class: "form-control" %>
+
+  <%= f.password_field :password, class: "form-control" %>
+
+  <%= f.password_field :password_confirmation, class: "form-control" %>
+  <div>
+    <p><strong>More details:</strong></p>
+    <div id="details">
+
+      <%= f.fields_for :user_details do |detail| %>
+        <%= render 'user_detail_fields', f: detail %>
+      <% end %>
+
+      <div class="links">
+        <%= link_to_add_association 'add detail', f, :user_details %>
+      </div>
+      <p class="count">Total: <span><%= @user.user_details.count %></span></p>
+    </div>
+    <br>
+  </div>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

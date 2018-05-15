@@ -1,0 +1,49 @@
+<% provide :title, "Cart" %>
+<div class="cart_content">
+    <div class="cart_title">
+      <h3>私のカート</h3>
+    </div>
+    <div class="cart_main">
+      <div class="cart_product_list">
+        <form class="" action="index.html" method="post">
+          <div class="product_list_table">
+            <table class="product_table">
+              <thead class="table_header">
+                <tr>
+                  <td class="total_cart"></td>
+                  <td class="space"></td>
+                  <td class="price">Price</td>
+                  <td class="quantity">Quantity</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </thead>
+              <tbody class="body_table"></tbody>
+            </table>
+          </div>
+        </form>
+      </div>
+      <div class="cart_order">
+        <div class="cart_summary">
+          <table class="summary_total">
+            <thead>
+              <tr>
+                <td colspan="2" class="summary_header">Thông tin đơn hàng</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="price_total">Tổng tiền: </td>
+                <td class="price_text"></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <%= link_to "MAKE ORDER", new_order_path, class: "btn btn-default payment" %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,119 @@
+<% provide :title, @user.first_name %>
+
+<hr>
+<div class="container bootstrap snippet">
+    <div class="row">
+      <div class="col-sm-10">
+      <%= gravatar_for @user %><h1><%= @user.first_name + " " + @user.last_name %></h1></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3"><!--left col-->
+
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Profile</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> <%= @user.activated_at %></li>
+
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Ordered</strong></span><%= @user.orders.count %></li>
+
+          </ul>
+
+
+        </div><!--/col-3-->
+      <div class="col-sm-9">
+
+          <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#home" data-toggle="tab">Details</a></li>
+            <li><a href="#messages" data-toggle="tab">Orders</a></li>
+            <% if @user.current_user? current_user %>
+
+              <li><a href="#settings" data-toggle="tab">Settings</a></li>
+            <% end %>
+
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+            <% if @user.user_details.any? %>
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Country</th>
+                      <th>City</th>
+                      <th>Address</th>
+                      <th>Phone</th>
+                    </tr>
+                  </thead>
+                  <tbody id="items">
+                      <% @user.user_details.each do |detail| %>
+                    <tr>
+
+                        <td><%= detail.country %></td>
+                        <td><%= detail.city %></td>
+                        <td><%= detail.address %></td>
+                        <td><%= detail.phone %></td>
+                    </tr>
+
+                      <% end %>
+                  </tbody>
+                </table>
+                <hr>
+                <div class="row">
+                  <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="pagination" id="myPager"></ul>
+                  </div>
+                </div>
+              </div><!--/table-resp-->
+              <% else %>
+                <h3>No details</h3>
+              <% end %>
+              <hr>
+
+             </div><!--/tab-pane-->
+             <div class="tab-pane" id="messages">
+              <% if @user.orders.any? %>
+               <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Date</th>
+                      <th>Address</th>
+                      <th>Phone</th>
+                    </tr>
+                  </thead>
+                  <tbody id="items">
+                      <% @user.orders.each do |order| %>
+                    <tr>
+
+                        <td><%= order.id %></td>
+                        <td><%= order.created_at %></td>
+                        <td><%= order.country +
+                          ", " + order.city +
+                          ", " + order.address %></td>
+                        <td><%= order.phone %></td>
+                    </tr>
+
+                      <% end %>
+                  </tbody>
+                </table>
+                <hr>
+                <div class="row">
+                  <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="pagination" id="myPager"></ul>
+                  </div>
+                </div>
+              </div><!--/table-resp-->
+              <% else %>
+              <h3>No orders</h3>
+              <% end %>
+             </div><!--/tab-pane-->
+             <div class="tab-pane" id="settings">
+                <%= render "edit" %>
+              </div>
+              </div><!--/tab-pane-->
+
+          </div><!--/tab-content-->
+        </div><!--/col-9-->
+    </div><!--/row-->
+

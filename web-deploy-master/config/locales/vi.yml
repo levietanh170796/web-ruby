@@ -1,0 +1,42 @@
+vi:
+  hello: "Hello world"
+  mailer:
+    title: "Sample App"
+    greeting: "Chào %{username},"
+    message: "Chào mừng đến Sample App! Click vào link dưới để kích hoạt tài khoản của bạn:"
+    activate: "Kích hoạt"
+    activation: "Kích hoạt tài khoản"
+    password_reset: "Reset mật khẩu"
+  password_reset:
+    title: "Reset mật khẩu"
+    hello: "Chào"
+    greeting: "Để reset password, hãy click vào link dưới đây:"
+    message: "Đường dẫn sẽ hết hạn sau 2 giờ.<br><br>
+      Nếu bạn không yêu cầu reset mật khẩu, hãy bỏ qua email này và mật khẩu sẽ vẫn như cũ."
+    reset: "Reset mật khẩu"
+    forgot: "(quên mật khẩu)"
+    forgot_title: "Quên mật khẩu"
+    update: "Cập nhật mật khẩu"
+    cant_empty: "không để rỗng"
+  warning:
+    error: "Có lỗi xảy ra!"
+    activation: "Tài khoản chưa được kích hoạt. Xin hãy kiểm tra email."
+  success:
+    login: "Bạn đã đăng nhập!"
+    activation: "Tài khoản đã kích hoạt!"
+    update: "Đã cập nhật Profile!"
+    delete: "Đã xóa tài khoản"
+    password_reset: "Password đã được thay đổi."
+  danger:
+    activation: "Đường dẫn kích hoạt không đúng!"
+    email: "Sai email hoặc mật khẩu"
+    find_user: "%{param} Không tìm thấy!"
+    log_in: "Hãy đăng nhập"
+    access: "Bạn không được truy cập trang này"
+    password_reset: "Email không tìm thấy"
+    password_reset_expiration: "Password reset đã hết hạn."
+  info:
+    activation: "Hãy kiểm tra email để lấy đường dẫn kích hoạt"
+    password_reset: "Email đã được gửi"
+  confirmation: "Xác nhận"
+  submit: "Submit"

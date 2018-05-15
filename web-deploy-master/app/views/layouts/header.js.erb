@@ -1,0 +1,20 @@
+ $('#search_text').autocomplete({
+        source: "products/autocomplete",
+        minLength: 1,
+        select: function (event, ui) {
+           $('#search_text').val(ui.item);
+           var id = ui["item"]["id"];
+           show_details(id);
+        }
+    }).autocomplete('instance')._renderItem = function(ul, item) {
+       var markup = [
+           '<span class="img">',
+           '<img src = <%= asset_path "products/" + rand(1..40).to_s + ".jpg" %> />',
+           '</span>',
+           '<span class="title">' + item.value + '</span>',
+           '<span class="author">' + item.manufactuer + '</span>',
+           '<span class="price">' + item.price + '</span>'];
+       return $('<li class = "abc">')
+           .append(markup.join(''))
+           .appendTo(ul);
+       };

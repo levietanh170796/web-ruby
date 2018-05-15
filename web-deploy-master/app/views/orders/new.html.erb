@@ -1,0 +1,99 @@
+<% provide :title, "Checkout" %>
+<div class="container wrapper">
+      
+    <div class="row cart-body">
+
+        <%= form_for @order, :html => {:class => 'form-horizontal'} do |f| %>
+            <%= render "shared/error_messages", object: @order %>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
+                <!--REVIEW ORDER-->
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Review Order 
+                        <div class="pull-right">
+                            <small>
+                                <a class="afix-1" href="/cart">Edit Cart</a>
+                            </small>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        
+                        <div class="review-order">
+                            
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <strong>Order Total</strong>
+                                <div class="pull-right"><span class='price_text'></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--REVIEW ORDER END-->
+                <div align='center'>
+                    <%= f.submit "ORDER", class: "btn btn-primary order-btn" %>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
+                <!--SHIPPING METHOD-->
+                <div class="panel panel-info">
+                    <div class="panel-heading">Address</div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <h4>Shipping Address</h4>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Country:</strong></div>
+                            <div class="col-md-12">
+                                <%= f.text_field :country, class: "form-control", value: if logged_in? then current_user.user_details[0].country end, :required => true %>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-xs-12">
+                                <strong>First Name:</strong>
+                                <%= f.text_field :first_name, class: "form-control", value: if logged_in? then current_user.first_name end, :required => true %>
+                            </div>
+                            <div class="span1"></div>
+                            <div class="col-md-6 col-xs-12">
+                                <strong>Last Name:</strong>
+                                <%= f.text_field :last_name, class: "form-control", value: if logged_in? then current_user.last_name end, :required => true %>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Address:</strong></div>
+                            <div class="col-md-12">
+                                <%= f.text_field :address, class: "form-control", value: if logged_in? then current_user.user_details[0].address end, :required => true %>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>City:</strong></div>
+                            <div class="col-md-12">
+                                <%= f.text_field :city, class: "form-control", value: if logged_in? then current_user.user_details[0].city end, :required => true %>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Phone Number:</strong></div>
+                            <div class="col-md-12">
+                                <%= f.text_field :phone, class: "form-control", value: if logged_in? then current_user.user_details[0].phone end, type: "number", :required => true %>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12"><strong>Email Address:</strong></div>
+                            <div class="col-md-12">
+                                <%= f.email_field :email, class: "form-control", value: if logged_in? then current_user.email end, :required => true %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--SHIPPING METHOD END-->
+            </div>
+        <% end %>
+
+    </div>
+    <div class="row cart-footer">
+
+    </div>
+</div>

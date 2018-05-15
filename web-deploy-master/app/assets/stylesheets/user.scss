@@ -1,0 +1,79 @@
+.user-container{ 
+	margin-top: 150px;
+}
+
+.user-container form {
+	width: 400px;
+	margin: 0 auto;
+}
+
+.user-menu{
+	margin: 20px;
+	padding: 0px;
+	background-color: #EEE;
+}
+
+.user-ava{
+	width: 120px;
+	margin:10px;
+}
+.user-name{
+	font-weight: bold;
+	margin: 10px;
+	font-size: 150%;
+}
+
+.user-menu-item a:hover{
+	color: darkblue;
+	text-decoration: none;
+}
+
+.user-card{
+	background-color: #EEE;
+	padding: 20px 40px;
+	margin: 20px;
+	height: 200px;
+}
+
+.user-card-content{
+	display: block;
+	float: left;
+}
+
+.user-card-edit{
+	margin-top: 30px;
+	display: block;
+	float: right;
+}
+
+.user-form-name {
+	display: inline-block;
+	width: 49.5%;
+}
+
+.fa {
+	margin: 0px 5px;
+	color: white;
+}
+
+.facebook, .google {
+	background-color: #3B5998;
+	padding: 10px;
+	width: 50%;
+	float:left;
+}
+
+.google{
+	background-color: #dd4b39;
+}
+
+.connect-with {
+	color:white;
+}
+
+.facebook a:hover, .google a:hover{
+	text-decoration: none;
+}
+.facebook:hover, .google:hover{
+	opacity: 0.8;
+}
